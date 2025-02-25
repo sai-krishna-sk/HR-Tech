@@ -93,3 +93,14 @@ async def analyze_employee_feedback(feedback: str = Form(...)):
 @app.get("/")
 def home():
     return {"message": "Welcome to AI-powered HR API"}
+
+
+
+
+
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render uses PORT environment variable
+    uvicorn.run(app, host="0.0.0.0", port=port)
